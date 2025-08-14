@@ -23,11 +23,6 @@ function App() {
     discord: ''
   });
 
-  const [calculator, setCalculator] = useState({
-    valorTotal: 0,
-    porcentagem: ''
-  });
-
   const [priceType, setPriceType] = useState('standard');
   const [cart, setCart] = useState({});
   const [total, setTotal] = useState(0);
@@ -58,8 +53,7 @@ function App() {
       }
     });
     setTotal(newTotal);
-    setCalculator(prev => ({ ...prev, valorTotal: newTotal }));
-  }, [cart, priceType]);
+  }, [cart, priceType, allProducts]);
 
   // Atualizar quantidade no carrinho
   const updateQuantity = (productId, quantity) => {
@@ -75,7 +69,6 @@ function App() {
       setPriceType(type);
       setCart({}); // resetar carrinho
       setTotal(0); // resetar total
-      setCalculator(prev => ({ ...prev, valorTotal: 0, porcentagem: '' }));
     }
   };
 
