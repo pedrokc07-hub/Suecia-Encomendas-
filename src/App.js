@@ -15,6 +15,21 @@ import uziImg from './imgs/uzi.png';
 import balaAkImg from './imgs/bala ak.png';
 import balaFiveImg from './imgs/bala five.png';
 
+// Dados dos produtos (definidos fora do componente para evitar recriação em cada render)
+const weapons = [
+  { id: 'ak47', name: 'AK-47', price: 150000, pricePartner: 120000, category: 'weapon', image: ak47Img, useImage: true },
+  { id: 'pow', name: 'PDW', price: 110000, pricePartner: 90000, category: 'weapon', image: pdwImg, useImage: true },
+  { id: 'uzi', name: 'UZI', price: 85000, pricePartner: 70000, category: 'weapon', image: uziImg, useImage: true },
+  { id: 'fiveseven', name: 'Five-Seven', price: 85000, pricePartner: 70000, category: 'weapon', image: fiveSevenImg, useImage: true }
+];
+
+const ammo = [
+  { id: '762', name: '7.62', price: 500, pricePartner: 350, category: 'ammo', image: balaAkImg, useImage: true },
+  { id: '380', name: '.380', price: 450, pricePartner: 300, category: 'ammo', image: balaFiveImg, useImage: true }
+];
+
+const allProducts = [...weapons, ...ammo];
+
 function App() {
   const [buyerData, setBuyerData] = useState({
     nome: '',
@@ -26,21 +41,6 @@ function App() {
   const [priceType, setPriceType] = useState('standard');
   const [cart, setCart] = useState({});
   const [total, setTotal] = useState(0);
-
-  // Dados dos produtos
-  const weapons = [
-    { id: 'ak47', name: 'AK-47', price: 150000, pricePartner: 120000, category: 'weapon', image: ak47Img, useImage: true },
-    { id: 'pow', name: 'PDW', price: 110000, pricePartner: 90000, category: 'weapon', image: pdwImg, useImage: true },
-    { id: 'uzi', name: 'UZI', price: 85000, pricePartner: 70000, category: 'weapon', image: uziImg, useImage: true },
-    { id: 'fiveseven', name: 'Five-Seven', price: 85000, pricePartner: 70000, category: 'weapon', image: fiveSevenImg, useImage: true }
-  ];
-
-  const ammo = [
-    { id: '762', name: '7.62', price: 500, pricePartner: 350, category: 'ammo', image: balaAkImg, useImage: true },
-    { id: '380', name: '.380', price: 450, pricePartner: 300, category: 'ammo', image: balaFiveImg, useImage: true }
-  ];
-
-  const allProducts = [...weapons, ...ammo];
 
   // Atualizar total quando o carrinho mudar
   useEffect(() => {

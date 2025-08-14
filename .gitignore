@@ -1,1 +1,29 @@
-node_modules
+# Logs
+logs
+*.log
+pm-debug.log*
+
+# Dependency directories
+node_modules/
+jspm_packages/
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Editor directories and files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Build artifacts
+build/
+
+# OS generated files
+.DS_Store
+.env*
+.gitattributes
+
+# misc
+.babelcache.json
+.eslintcache
