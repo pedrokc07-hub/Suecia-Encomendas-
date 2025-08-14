@@ -1,0 +1,16 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Courier New', monospace;
+  background-color: #0b1b33; /* azul escuro sólido */
+  color: #4da3ff; /* texto azul */
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+}
